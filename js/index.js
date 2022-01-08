@@ -15,7 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", () => {
                 containerItemList.textContent = ''
                 response.forEach((el, i) => {
-                    let now = new Date();
                     const a = document.createElement("div");
                     a.className = "listItem";
                     const p = document.createElement("p");
@@ -27,9 +26,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     a.appendChild(p);
                     a.appendChild(btnA);
                     userList.appendChild(a);
-                    a.onclick = function () {
+                    btnA.onclick = function () {
                         let xhr = new XMLHttpRequest();
                         console.log(`id отправителя: ${userID}`);
+                        let now = new Date();
                         console.log(now);
                         let json = {
                             id: el.id,
